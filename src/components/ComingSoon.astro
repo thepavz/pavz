@@ -1,11 +1,12 @@
 ---
+import { Image } from "astro:assets";
+import loading from "../assets/images/loading.gif";
 import "../styles/global.css";
 ---
 
 <div
-  class="w-full flex-col h-screen bg-blue gap-2 flex justify-center items-center"
+  class="w-full flex-col h-screen bg-blue flex justify-center items-center"
 >
-<h1 class="pl text-4xl">The PAVZ</h1>
-<h1 class="pl text-md mb-3">Wait for us</h1>
-<div class="loader"></div>
+  <Image src={loading} alt="Website loading" />
+  <p>Coming soon ...</p>
 </div>
