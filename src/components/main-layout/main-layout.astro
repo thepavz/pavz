@@ -1,0 +1,77 @@
+---
+import "../../styles/global.css";
+import logo from "../../assets/images/logo.jpg";
+import vector from "../../assets/images/vector.png";
+import { Image } from "astro:assets";
+import { Menu } from "lucide-astro";
+---
+
+<div class="w-full p-10">
+  <div
+    class="md:none border-b  px-0 border-black pb-3 flex justify-between items-center"
+  >
+    <div>
+      <button class="cursor-pointer inline md:hidden">
+        <Menu />
+      </button>
+      <nav class="md:flex gap-8 hidden">
+        <a
+          href="/"
+          class="inter hover:bg-black transition px-2 hover:text-white">Home</a
+        >
+        <a
+          href="/#projects"
+          class="inter hover:bg-black transition px-2 hover:text-white"
+          >Projects</a
+        >
+        <a
+          href="/#contact-me"
+          class="inter hover:bg-black transition px-2 hover:text-white"
+          >Contact me</a
+        >
+        <a
+          target="_blank"
+          href="https://github.com/thepavz"
+          class="inter hover:bg-black transition px-2 hover:text-white"
+          >Github</a
+        >
+      </nav>
+    </div>
+    <div>
+      <a href="/">
+        <Image src={logo} alt="Website logo" width={50} />
+      </a>
+    </div>
+  </div>
+  <div
+    class="w-full h-[calc(100vh-10rem)] bg px-0 md:px-10 flex md:flex-row flex-col-reverse justify-center items-center"
+  >
+    <div class="w-full md:w-1/2">
+      <h1 class="text-8xl is-regular">The PAVZ</h1>
+      <p class="my-5 w-full md:w-3/4 text-left">
+        Hi, I’m <b>Hamidreza Ramzani</b>, a passionate web developer with
+        expertise in JavaScript, React, and Node.js. I specialize in building
+        sleek, responsive, and high-performance web applications. Whether you're
+        looking for a modern UI/UX design, a dynamic web app, or a custom-built
+        solution, I’m here to bring your ideas to life.
+      </p>
+
+      <div class="flex flex-col w-full md:w-1/2">
+        <input
+          class="placeholder-black placeholder-opacity-100 border w-full mt-5 h-12 outline-none px-2 inter"
+          type="text"
+          placeholder="Email"
+        />
+        <div class="w-full flex justify-end">
+          <button
+            class="border w-30 h-10 inter mt-2 hover:bg-black hover:text-white transition cursor-pointer"
+            >Submit</button
+          >
+        </div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2 hidden md:flex justify-center">
+      <Image src={vector} alt="the website vector" width={600} />
+    </div>
+  </div>
+</div>
