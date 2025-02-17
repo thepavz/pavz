@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import react from "../assets/images/tech-icons/react.png";
+import nest from "../assets/images/tech-icons/nest.png";
+import html from "../assets/images/tech-icons/html.png";
+import css from "../assets/images/tech-icons/css.png";
+import mongo from "../assets/images/tech-icons/mongo.png";
+import "../styles/global.css";
+
+const techItems = [
+  {
+    title: "HTML5",
+    icon: html,
+    hover: "group-hover:text-red-200"
+  },
+  {
+    title: "CSS3",
+    icon: css,
+    hover: "group-hover:text-blue-200"
+  },
+  {
+    title: "ReactJS",
+    icon: react,
+    hover: "group-hover:text-sky-200"
+  },
+  {
+    title: "NestJS",
+    icon: nest,
+    hover: "group-hover:text-red-200"
+  },
+
+  {
+    title: "MongoDB",
+    icon: mongo,
+    hover: "group-hover:text-green-200"
+  },
+];
+---
+
+<div class="w-full px-20 bg-black py-16 is-bold flex flex-col items-center">
+  <div class="w-full">
+    <h2 class="text-6xl text-center text-white">My skills</h2>
+  </div>
+  <div class="w-full flex justify-center py-10">
+    <div
+      class="w-2/4 flex justify-center items-center flex-wrap gap-8 px-2 py-5"
+    >
+      {
+        techItems.map(({ title, icon, hover }) => (
+          <div class="flex border group border-1 p-2 flex-col w-1/6 items-center justify-center">
+            <Image src={icon} alt={title} width={100} class="hover:grayscale-50 transition duration-500 grayscale-100" />
+            <span class={`inter text-stone-100 mt-2 transition duration-500 ${hover}`}>{title}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
